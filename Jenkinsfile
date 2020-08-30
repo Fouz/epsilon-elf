@@ -60,8 +60,8 @@ stages {
                      helm install kibana elastic/kibana --version=7.9.0 --namespace=elf --set service.type=LoadBalancer
 
                    '''
-   }
-
+                          
+          }
+      }
   }
- }
 }
