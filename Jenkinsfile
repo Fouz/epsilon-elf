@@ -30,8 +30,7 @@ stages {
           steps {
               container('kubectl') {
                   sh '''
-                      kubectl apply -f elf.namespace.yaml
-                      kubectl apply -f ingress.yaml -n elf
+                      kubectl --token=$TOKEN create namespace elf
                   '''
               }
           }
