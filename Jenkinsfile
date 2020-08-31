@@ -55,7 +55,7 @@ stages {
                      helm repo update
                      helm install elasticsearch elastic/elasticsearch --version=7.9.0 --namespace=elf
                      helm install fluent-bit fluent/fluent-bit --namespace=elf
-                     helm install kibana elastic/kibana --version=7.9.0 --namespace=elf --set service.type=LoadBalancer
+                     helm install kibana elastic/kibana --version=7.9.0 --namespace=elf --set service.type=NodePort
 
                    '''
                           
