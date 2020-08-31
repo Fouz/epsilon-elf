@@ -5,11 +5,10 @@ pipeline {
 apiVersion: v1
 kind: Pod
 metadata:
-  labels:
 spec:
   containers:
   - name: helm
-    image: docker:latest
+    image: bryandollery/terraform-packer-aws-alpine
     command: 
     - cat
     tty: true
@@ -31,11 +30,11 @@ spec:
   }   
 
 environment {
-    TOKEN=credentials('75a56777-f2f7-49fe-85ef-593269041c62')
+    TOKEN=credentials('bc33a7c7-818f-47d0-9140-94822190010c')
   }
 
 stages { 
-    stage("kubectl-deploy") {
+    stage('deploy:kubectl') {
           steps {
               container('kubectl') {
                   sh '''
@@ -48,7 +47,7 @@ stages {
       }
 
 
-    stage('helm-deploy') {
+    stage('deploy:helm') {
             steps {
                 container('helm') {
                    sh '''
