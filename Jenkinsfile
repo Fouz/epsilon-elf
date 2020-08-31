@@ -38,6 +38,7 @@ stages {
           steps {
               container('kubectl') {
                   sh '''
+                      kubectl create -n elf clusterrolebinding jenkins --clusterrole cluster-admin --serviceaccount=jenkins:default
                       kubectl apply -f elf.namespace.yaml
                       kubectl run random-logger --image=chentex/random-logger -n elf
                       kubectl apply -f ingress.yaml -n elf
