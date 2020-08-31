@@ -30,7 +30,7 @@ stages {
           steps {
               container('kubectl') {
                   sh '''
-                       kubectl --token=$TOKEN create namespace elf
+                       kubectl --token=$TOKEN create namespace elff
                   '''
               }
           }
