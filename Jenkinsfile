@@ -8,7 +8,7 @@ metadata:
 spec:
   containers:
   - name: helm
-    image: bryandollery/terraform-packer-aws-alpine
+    image: alpine/helm
     command: 
     - cat
     tty: true
